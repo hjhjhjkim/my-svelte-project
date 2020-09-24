@@ -1,19 +1,31 @@
 <script>
-  import first from "./first.svelte";
-  import second from "./second.svelte";
+  let text = "";
+  let number = 0;
 </script>
 
 <style>
-  h1:first-child {
-    font-family: "Do Hyeon", sans-serif;
-  }
-  h1:last-child {
-    font-family: "Nanum Pen Script", cursive;
+  .fontsize {
+    font-size: (number);
   }
 </style>
 
-<h1>1번 폰트입니다.</h1>
-<h1>2번 폰트입니다.</h1>
-<h2>{first}</h2>
-<h2>{second}</h2>
-<h4>3번 폰트입니다.</h4>
+<div class="container">
+  <section>
+    <h1>#6 InputBinding</h1>
+
+    <label for="letter">text</label>
+    <input id="letter" type="text" bind:value={text} />
+    <label for="font">fontsize</label>
+    <input id="font" type="number" bind:value={number} />
+
+    <br />
+    <input type="text" placeholder={text} class="fontsize" />
+    <input type="text" placeholder={text} class="fontsize" />
+    <input type="text" placeholder={text} class="fontsize" />
+    <input type="text" placeholder={text} class="fontsize" />
+    <input type="text" placeholder={text} class="fontsize" />
+    <input type="text" placeholder={text} class="fontsize" />
+    <input type="text" placeholder={text} class="fontsize" />
+    <input type="text" placeholder={text} class="fontsize" />
+  </section>
+</div>
