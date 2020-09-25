@@ -1,26 +1,28 @@
 <script>
   let text = "";
   let number = 0;
-  import First from "./first.svelte";
+  /*  import First from "./first.svelte";
   import Second from "./second.svelte";
   import Third from "./third.svelte";
   import Fourth from "./fourth.svelte";
   import Fifth from "./fifth.svelte";
   import Sixth from "./six.svelte";
   import Seventh from "./seventh.svelte";
-  import Eighth from "./eighth.svelte";
+  import Eighth from "./eighth.svelte";*/
 </script>
 
 <style>
   /* input::placeholder {
     font-size: {number === undefined ? 0 : number}px" ;
   }*/
-
+  :root{--font-size:{number}}
   .block {
     display: inline-block;
     width: 200px;
     height: 100px;
+    font-size: var(--font-size);
   }
+  
   label {
     display: inline;
   }
