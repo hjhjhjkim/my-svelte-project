@@ -15,7 +15,8 @@
   /* input::placeholder {
     font-size: {number === undefined ? 0 : number}px" ;
   }*/
-  :root{--font-size:{number}}
+  /* svelte style에서 자바스크립트 변수를 활용하기 위한 노력들이 눈에 보입니다.. */
+  /* 결론부터 말씀드리자면, 별도 라이브러리 없이 인라인 스타일을 활용하지 않고서는 불가능합니다.. */
   .block {
     display: inline-block;
     width: 200px;
@@ -73,13 +74,14 @@
 
   <br />
   <section>
-    <input type="text" placeholder={text} id="font1" class="block" />
-    <input type="text" placeholder={text} id="font2" class="block" />
-    <input type="text" placeholder={text} id="font3" class="block" />
-    <input type="text" placeholder={text} id="font4" class="block" />
-    <input type="text" placeholder={text} id="font5" class="block" />
-    <input type="text" placeholder={text} id="font6" class="block" />
-    <input type="text" placeholder={text} id="font7" class="block" />
-    <input type="text" placeholder={text} id="font8" class="block" />
+    <!-- 사용하신 방법을 적용하기 위해서는 아래와 같이 가능합니다 -->
+    <input type="text" placeholder={text} style="--font-size: {number}px" id="font1" class="block" />
+    <input type="text" placeholder={text} style="--font-size: {number}px" id="font2" class="block" />
+    <input type="text" placeholder={text} style="--font-size: {number}px" id="font3" class="block" />
+    <input type="text" placeholder={text} style="--font-size: {number}px" id="font4" class="block" />
+    <input type="text" placeholder={text} style="--font-size: {number}px" id="font5" class="block" />
+    <input type="text" placeholder={text} style="--font-size: {number}px" id="font6" class="block" />
+    <input type="text" placeholder={text} style="--font-size: {number}px" id="font7" class="block" />
+    <input type="text" placeholder={text} style="--font-size: {number}px" id="font8" class="block" />
   </section>
 </div>
