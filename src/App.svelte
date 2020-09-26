@@ -1,32 +1,16 @@
 <script>
-  let arr = [];
-  let count = 0;
-
-  $: {
-    arr.push(count);
-    // arr = arr;
-    console.log(arr);
-  }
-  /*$: sum= arr.reduce((result, value))=>result+value,0);
-$: sub=arr.reduce((result, value))=>result+value,0);
-*/
-  $: sum = arr.reduce((acc, crv) => acc + crv, 0);
-  $: sub = arr.reduce((acc, crv) => acc - crv, 0);
-
+  let number = 0;
   const add = () => {
-    count++;
+    number++;
+  };
+  const minus = () => {
+    number--;
   };
 </script>
 
 <style>
-  /*transform rotate*/
 </style>
 
-<div class="container">
-  <section>
-    <h1>#4 Reactivity Array</h1>
-    <p>{arr.join(' + ')} = {sum}</p>
-    <p>{arr.join(' - ')} = {sub}</p>
-    <button on:click={add}>{count}</button>
-  </section>
-</div>
+<p>{number}</p>
+<button on:click={add}>+</button>
+<button on:click={minus}>-</button>
