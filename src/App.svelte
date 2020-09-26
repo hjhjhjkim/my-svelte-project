@@ -19,6 +19,7 @@ $: sub=arr.reduce((result, value))=>result+value,0);
 </script>
 
 <style>
+  /*transform rotate*/
 </style>
 
 <div class="container">
