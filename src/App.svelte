@@ -1,9 +1,13 @@
 <script>
   let count = 0;
-  $: double = count * 2;
-  const add = () => {
-    count++;
-  };
+  $: console.log(count);
+  $: if (count >= 60) {
+    alert("초과!");
+    count = 0;
+  }
+  $: if (count < 0) {
+    alert("!");
+  }
 </script>
 
 <style>
@@ -11,9 +15,17 @@
 
 <div class="container">
   <section>
-    <h1>#2 Reactivity Declaration</h1>
-    <p>횟수: {count}</p>
-    <p>횟수*2: {double}</p>
-    <button on:click={add}> + </button>
+    <h1>#3 Reactivity Statements</h1>
+    <p>{count}</p>
+    <button
+      on:click={() => {
+        count++;
+      }}>
+      +
+    </button>
+    <button
+      on:click={() => {
+        count--;
+      }}>-</button>
   </section>
 </div>
