@@ -1,16 +1,27 @@
 <script>
-  let number = 0;
+  let count = 0;
+
   const add = () => {
-    number++;
+    count++;
   };
   const minus = () => {
-    number--;
+    count--;
   };
 </script>
 
 <style>
 </style>
 
-<p>{number}</p>
-<button on:click={add}>+</button>
-<button on:click={minus}>-</button>
+<div class="container">
+  <section>
+    <h1>#1. Event Listener</h1>
+
+    <div class="wrapper">
+      <article class="click">
+        <p>{count}</p>
+        <button on:click={add}>+</button>
+        <button on:click={minus}>-</button>
+      </article>
+    </div>
+  </section>
+</div>
