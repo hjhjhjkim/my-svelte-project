@@ -1,11 +1,8 @@
 <script>
   let count = 0;
-
+  $: double = count * 2;
   const add = () => {
     count++;
-  };
-  const minus = () => {
-    count--;
   };
 </script>
 
@@ -14,14 +11,9 @@
 
 <div class="container">
   <section>
-    <h1>#1. Event Listener</h1>
-
-    <div class="wrapper">
-      <article class="click">
-        <p>{count}</p>
-        <button on:click={add}>+</button>
-        <button on:click={minus}>-</button>
-      </article>
-    </div>
+    <h1>#2 Reactivity Declaration</h1>
+    <p>횟수: {count}</p>
+    <p>횟수*2: {double}</p>
+    <button on:click={add}> + </button>
   </section>
 </div>
