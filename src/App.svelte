@@ -9,24 +9,10 @@
     alert("!");
     count = 0;
   }
-
-  var time = 0;
-  function noodle() {
-    clearInterval(time);
-    time = setInterval(timer(), 1000);
-  }
-  function timer() {
-    count = count - 1;
-    document.getElementById("countdown").innerHTML = count;
-    if (count == 0) {
-      clearInterval(time);
-      alert("Time Over");
-    }
-  }
 </script>
 
 <body>
-  <input id="countdown" value={count} />
+  <p id="countdown">{count}</p>
   <button
     on:click={() => {
       count++;
@@ -36,5 +22,20 @@
     on:click={() => {
       count--;
     }}>-</button>
-  <input type="button" value="start!" onclick="noodle()" />
+  <button onclick="noodle()">start!</button>
+  <script>
+    var time = 0;
+    function noodle() {
+      clearInterval(time);
+      time = setInterval(timer(), 1000);
+    }
+    function timer() {
+      document.getElementById("countdown").innerHTML = count = count - 1;
+
+      if (count == 0) {
+        clearInterval(time);
+        alert("Time Over");
+      }
+    }
+  </script>
 </body>
