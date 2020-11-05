@@ -1,31 +1,34 @@
 <script>
-  let count = 0;
+  var count = 0;
   $: console.log(count);
-  $: if (count >= 60) {
+  $: if (count >= 10) {
     alert("초과!");
     count = 0;
   }
   $: if (count < 0) {
     alert("!");
+    count = 0;
+  }
+  var time = 0;
+  function noodle() {
+    time = setInterval(timer(), 1000);
+  }
+  function timer() {
+    count = count - 1;
+    document.getElementById("countdown").innerHTML = { count };
   }
 </script>
 
-<style>
-</style>
+<body>
+  <p id="countdown">{count}</p>
+  <button
+    on:click={() => {
+      count++;
+    }}>+</button>
 
-<div class="container">
-  <section>
-    <h1>#3 Reactivity Statements</h1>
-    <p>{count}</p>
-    <button
-      on:click={() => {
-        count++;
-      }}>
-      +
-    </button>
-    <button
-      on:click={() => {
-        count--;
-      }}>-</button>
-  </section>
-</div>
+  <button
+    on:click={() => {
+      count--;
+    }}>-</button>
+  <input type="button" value="start!" onclick="noodle()" />
+</body>
